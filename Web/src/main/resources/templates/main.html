@@ -13,8 +13,8 @@
     </div>
     <div>
         <form th:action="main" method="post">
-            <input type="text" name="name" placeholder="Pleas enter name:">
-            <input type="email" name="email" placeholder="Pleas enter email:">
+            <input type="text" name="tag" placeholder="Pleas enter Tag:">
+            <input type="text" name="text" placeholder="Pleas enter Text:">
             <button type="submit">Add</button>
         </form>
     </div>
@@ -22,16 +22,17 @@
     <div>Список пользователей</div>
     <div>
         <form method="post" th:action="filter">
-            <input type="text" name="name">
+            <input type="text" name="tag">
             <button type="submit">Find</button>
         </form>
-        <div th:each="el : ${byName}">
-            <a3 th:text="${el.name}"></a3>
+        <div th:each="el : ${byTag}">
+            <a3 th:text="${el.tag}"></a3>
         </div>
     </div>
-    <div th:each="el : ${user}">
-        <b th:text="${el.name}"></b>
-        <b th:text="${el.email}"></b>
+    <div th:each="el : ${messages}">
+        <b th:text="${el.tag}"></b>
+        <b th:text="${el.text}"></b>
+        <strong th:text="${el.authorName}"></strong>
     </div>
 </body>
 </html>
