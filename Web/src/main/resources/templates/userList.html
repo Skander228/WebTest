@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="el : ${users}">
+            <td th:text="${el.name}"></td>
+            <td th:text="${el.roles}"></td>
+            <td><a th:href="@{'/user/' + ${el.id}}">edit</a></td>
+        </tr>
+        </tbody>
+    </table>
+</html>
